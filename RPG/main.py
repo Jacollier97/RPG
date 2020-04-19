@@ -173,8 +173,11 @@ def continueDialogue():
 
 
 def main():
+    import subprocess as sp
+    sp.call("clear", shell=True)
+
     data = getPlayerData()
-    print("\nWelcome to the game.")
+    print("Welcome to the game.")
 
     print("\nGUARD: Greetings, traveller! You must have come a long way to reach this place. How my I assist you?")
     continueDialogue()
@@ -188,6 +191,7 @@ def main():
         continueDialogue()
     elif ans == 'menu':
         mainMenu()
+
 
 
 main()
