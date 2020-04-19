@@ -38,6 +38,11 @@ class Gen_Enemy():
             else:
                 self.end()
 
+    @staticmethod
+    def end():
+        """exit the program"""
+        print("ok bye!")
+        exit()
 
     def begin_check(self):
         message = "do you want to create a new enemy?"
