@@ -1,10 +1,10 @@
-import json
+import yaml
 
 class Gen_Enemy():
     """this class is used to more easily generate enemy data, and then save it into the
     enemies.json file"""
 
-    ENEMIES_DATA = "RPG/enemies.json"
+    ENEMIES_DATA = "RPG/enemies.yaml"
     def __init__(self):
         self.data = self.get_data()
         self.main()
@@ -26,7 +26,7 @@ class Gen_Enemy():
 
     def get_data(self):
         with open(self.ENEMIES_DATA, "r") as f:
-            data = json.load(f)
+            data = yaml.load(f, Loader=yaml.FullLoader)
         return data
 
     def get_num_input(self, value):
