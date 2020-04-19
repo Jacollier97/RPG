@@ -1,6 +1,6 @@
 import json
 import random
-from .enemy import Enemy
+from enemy import Enemy
 
 PLAYER_DATA = "playerData.json"
 ENEMIES_DATA = "enemies.json"
