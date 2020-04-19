@@ -10,19 +10,73 @@ class Gen_Enemy():
         self.main()
 
     def main(self):
+        # check if you actually want to create an enemy
         self.begin_check()
 
-        new_enemy = self.get_new_enemy()
+        while True:
+            # collect recent copy of the enemies.yaml data
+            self.data = self.get_data()
+            # get the enemy
+            title, enemy = self.get_new_enemy()
+
+            # tell you what data it got from you
+            print(yaml.dump({title: enemy}, sort_keys=False))
+            if self.get_y_n("do you like it? (y/n): "):
+                # add new data to old and write it to enemies.yaml
+                self.data[title] = enemy
+                self.set_data(self.data)
+            else:
+                # ask you if you want to try again else, exit program
+                if self.get_y_n("do you want to try again? (y/n): "):
+                    print("ok lets try again.")
+                    continue
+                else:
+                    self.end()
+            # ask you if you want to make another or exit the program
+            if self.get_y_n("do you want to make another? (y/n): "):
+                continue
+            else:
+                self.end()
 
 
     def begin_check(self):
         message = "do you want to create a new enemy?"
         return self.get_y_n(message)
 
-
     def get_new_enemy(self):
-    def set_data(self):
-        pass
+        """ collect all data values need to create an enemy,
+        and check to make sure they are within bounds.
+        return data values and enemy title."""
+
+        string_values_needed = ["name",
+                                "race"]
+
+        num_values_needed = ["health",
+                             "attack",
+                             "strength",
+                             "defence",
+                             "magic",
+                             "archery"]
+
+        while True:
+            enemy_title = input("What should be the enemy's title?: ").lower()
+
+            # check if that title already exists in the data
+            if enemy_title in self.data:
+                print("that title is already in the data. pick a new one")
+            else:
+                print("good choice")
+                break
+
+        enemy = {}
+        for value in string_values_needed:
+            enemy[value] = input(f"what should the enemy's {value} be?: ")
+
+        # get integer values and check if within bounds
+        for value in num_values_needed:
+            enemy[value] = self.get_num_input(value)
+
+        return enemy_title, enemy
 
     def get_data(self):
         with open(self.ENEMIES_DATA, "r") as f:
