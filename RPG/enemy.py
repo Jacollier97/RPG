@@ -5,12 +5,12 @@ class Enemy:
                  archery=None):
         self.name = name
         self.race = race
-        self.health = health
-        self.attack = attack
-        self.strength = strength
-        self.defence = defence
-        self.magic = magic
-        self.archery = archery
+        self.health = int(health)
+        self.attack = int(attack)
+        self.strength = int(strength)
+        self.defence = int(defence)
+        self.magic = int(magic)
+        self.archery = int(archery)
 
     def do_attack(self,attack_move="basic"):
         # place holder
@@ -30,3 +30,6 @@ class Enemy:
 
     def speak(self):
         pass
+
+    def __str__(self):
+        return f"{self.name} im working"
