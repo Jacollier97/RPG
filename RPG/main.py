@@ -133,6 +133,9 @@ def fight(enemy, player_hit_first=False):
         loot = the_enemy.die()
         check_loot(loot)
 
+def check_loot(loot):
+    pass
+
 
 def load_guide(filename):
     with open(filename, "r") as f:
