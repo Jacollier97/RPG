@@ -87,7 +87,8 @@ class Gen_Enemy():
             data = yaml.load(f, Loader=yaml.FullLoader)
         return data
 
-    def get_num_input(self, value):
+    @staticmethod
+    def get_num_input(value):
         while True:
             try:
                 answer = int(input(f"What should the enemies {value} be? (1-200): "))
