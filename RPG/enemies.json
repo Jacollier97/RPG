@@ -1,0 +1,25 @@
+{
+
+    "guard": {
+      "name":      "Guard",
+      "race":      "human",
+      "health":    "50",
+      "attack":    "50",
+      "strength":  "50",
+      "defence":   "50",
+      "magic":     "10",
+      "archery":   "30"
+    },
+
+    "giant spider": {
+      "name":      "Giant Spider",
+      "race":      "insect",
+      "health":    "7",
+      "attack":    "3",
+      "strength":  "1",
+      "defence":   "1",
+      "magic":     "1",
+      "archery":   "1"
+    }
+
+}
