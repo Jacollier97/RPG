@@ -1,20 +1,20 @@
-import json
+
 import random
 from enemy import Enemy
-
-PLAYER_DATA = "playerData.json"
-ENEMIES_DATA = "enemies.json"
+import yaml
+PLAYER_DATA = "player_data.yaml"
+ENEMIES_DATA = "enemies.yaml"
 
 
 def get_data(filename):
     with open(filename, "r") as f:
-        data = json.load(f)
+        data = yaml.load(f,Loader=yaml.FullLoader)
     return data
 
 
 def set_data(filename,data):
     with open(filename, "w") as f:
-        f.write(json.dumps(data, indent=4))
+        yaml.dump(data,f,sort_keys=False)
 
 
 def getPlayerData():
