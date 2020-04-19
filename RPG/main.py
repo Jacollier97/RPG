@@ -4,21 +4,25 @@ import random
 PLAYER_DATA = "playerData.json"
 ENEMIES_DATA = "enemies.json"
 
-def getPlayerData():
-    with open("playerData.json", 'r') as f:
+
+def get_data(filename):
+    with open(filename,"r") as f:
         data = json.load(f)
     return data
 
+def set_data(filename,data):
+    with open(filename, "w") as f:
+        f.write(json.dumps(data,indent=4))
+
+def getPlayerData():
+    return get_data(filename=PLAYER_DATA)
 
 def setPlayerData(data):
-    with open("playerData.json", 'w') as f:
-        f.write(json.dumps(data, indent=4))
+    set_data(filename=PLAYER_DATA, data=data)
 
 
 def getOppData():
-    with open("enemies.json", 'r') as f:
-        data = json.load(f)
-    return data
+    return get_data(ENEMIES_DATA)
 
 def randVar():
     odds = random.randrange(0, 101)
