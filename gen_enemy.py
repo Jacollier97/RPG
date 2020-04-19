@@ -78,6 +78,10 @@ class Gen_Enemy():
 
         return enemy_title, enemy
 
+    def set_data(self, data):
+        with open(self.ENEMIES_DATA, "w") as f:
+            yaml.dump(data, f, sort_keys=False)
+
     def get_data(self):
         with open(self.ENEMIES_DATA, "r") as f:
             data = yaml.load(f, Loader=yaml.FullLoader)
