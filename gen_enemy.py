@@ -7,7 +7,7 @@ class GenEnemy:
 
     ENEMIES_DATA = "RPG/enemies.yaml"
     def __init__(self):
-        self.data = self.get_data()
+        self.data = {}
         self.main()
 
     def main(self):
