@@ -106,13 +106,32 @@ def skillGuide():
         skillGuide()
 
 
-def fight(enemy):
+def fight(enemy, player_hit_first=False):
     oppData = getOppData()
-    the_dude = Enemy(**oppData[enemy])
-    print(the_dude)
+    the_enemy = Enemy(**oppData[enemy])
+    player_data = getPlayerData()
+    player = Player(**player_data)
+    players_turn = player_hit_first
+    while (player.alive() and the_enemy.alive()):
+        # fight
+        if players_turn:
+            the_enemy.do_defence(player.do_attack())
+        else:
+            player.do_defence(the_enemy.do_attack())
+
+        # toggle player's turn to make the combat turn based
+        input("wait")
+        players_turn = not players_turn
+
+    if not player.alive():
+        print("sorry you're dead bud")
+        # do something else now.....
 
 
-
+    elif not the_enemy.alive():
+        print("you killed him")
+        loot = the_enemy.die()
+        check_loot(loot)
 
 
 def load_guide(filename):
