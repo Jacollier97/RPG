@@ -1,47 +1,32 @@
 import json
 import random
+from enemy import Enemy
+
+PLAYER_DATA = "playerData.json"
+ENEMIES_DATA = "enemies.json"
 
 
-def getPlayerData():
-    with open("playerData.json", 'r') as f:
+def get_data(filename):
+    with open(filename,"r") as f:
         data = json.load(f)
     return data
 
+def set_data(filename,data):
+    with open(filename, "w") as f:
+        f.write(json.dumps(data,indent=4))
+
+def getPlayerData():
+    return get_data(filename=PLAYER_DATA)
 
 def setPlayerData(data):
-    with open("playerData.json", 'w') as f:
-        f.write(json.dumps(data, indent=4))
+    set_data(filename=PLAYER_DATA, data=data)
 
 
 def getOppData():
-    with open("enemies.json", 'r') as f:
-        data = json.load(f)
-    return data
-
-
-class Enemy:
-    def __init__(self, name=None, race=None, health=None, attack=None, strength=None, defence=None, magic=None,
-                 archery=None):
-        self.name = name
-        self.race = race
-        self.health = health
-        self.attack = attack
-        self.strength = strength
-        self.defence = defence
-        self.magic = magic
-        self.archery = archery
-
-
-data = getOppData()
-
-stats = Enemy(**data["guard"])
-print(stats)
-
-
+    return get_data(ENEMIES_DATA)
 
 def randVar():
-    odds = random.randrange(0, 101)
-    return int(odds)
+    return random.randint(101)
 
 
 def playerAtk(attack, oppDef):
@@ -121,36 +106,45 @@ def fight(enemy):
     # while (player == alive) or (enemy == alive):
 
 
+def load_guide(filename):
+    with open(filename,"r") as f:
+        contents = f.read()
+    return contents
+
+
 def attackGuide():
-    print("\nAttack Skill Guide:")
-    print('\nThe Attack skill controls the probability that you will land an attack on an enemy. It also allows you '
-          'to wield better weapons as your level increases.')
+    contents = load_guide("guides/attack_guide.txt")
+    print(contents)
 
 
 def strengthGuide():
-    print("\nStrength Skill Guide:")
-    print('\nThe Strength skill controls both your max possible damage, and also the likelihood '
-          'that you will deal more damage with your successful hits.')
+    contents = load_guide("guides/strength_guide.txt")
+    print(contents)
 
 
 def defenceGuide():
-    print("Defence Skill Guide:")
+    contents = load_guide("guides/defence_guide.txt")
+    print(contents)
 
 
 def magicGuide():
-    print("Magic Skill Guide:")
+    contents = load_guide("guides/magic_guide.txt")
+    print(contents)
 
 
 def archeryGuide():
-    print("Archery Skill Guide:")
+    contents = load_guide("guides/archery_guide.txt")
+    print(contents)
 
 
 def healthGuide():
-    print("Health Skill Guide:")
+    contents = load_guide("guides/health_guide.txt")
+    print(contents)
 
 
 def brewingGuide():
-    print("Brewing Skill Guide:")
+    contents = load_guide("guides/brewing_guide.txt")
+    print(contents)
 
 
 def mainMenu():
