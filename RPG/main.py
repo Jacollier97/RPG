@@ -106,7 +106,7 @@ def skillGuide():
 
 def fight(enemy):
     oppData = getOppData()
-    the_dude = Enemy(oppData[enemy])
+    the_dude = Enemy(**oppData[enemy])
     print(the_dude)
 
 
