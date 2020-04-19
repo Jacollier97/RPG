@@ -98,7 +98,7 @@ class GenEnemy:
     def get_num_input(value):
         while True:
             try:
-                answer = int(input(f"What should the enemies {value} be? (1-200): "))
+                answer = int(input(f"What should the enemy's {value} be? (1-200): "))
             except ValueError as e:
                 print("That's not an integer.")
                 continue
