@@ -2,6 +2,8 @@
 import yaml
 import random
 from enemy import Enemy
+from player import Player
+
 PLAYER_DATA = "player_data.yaml"
 ENEMIES_DATA = "enemies.yaml"
 
