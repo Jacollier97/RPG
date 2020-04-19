@@ -46,6 +46,7 @@ class GenEnemy:
         exit()
 
     def begin_check(self):
+        """ask you if you really want to add an enemy"""
         message = "do you want to create a new enemy?"
         return self.get_y_n(message)
 
