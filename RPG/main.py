@@ -1,7 +1,7 @@
 
+import yaml
 import random
 from enemy import Enemy
-import yaml
 PLAYER_DATA = "player_data.yaml"
 ENEMIES_DATA = "enemies.yaml"
 
