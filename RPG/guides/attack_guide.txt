@@ -1,0 +1,5 @@
+
+Attack Skill Guide:
+
+The Attack skill controls the probability that you will land an attack on an enemy.
+It also allows youto wield better weapons as your level increases.

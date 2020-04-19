@@ -1,0 +1,5 @@
+
+Strength Skill Guide:
+
+The Strength skill controls both your max possible damage, and also the likelihood
+that you will deal more damage with your successful hits.

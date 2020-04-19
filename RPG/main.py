@@ -106,36 +106,45 @@ def fight(enemy):
     # while (player == alive) or (enemy == alive):
 
 
+def load_guide(filename):
+    with open(filename,"r") as f:
+        contents = f.read()
+    return contents
+
+
 def attackGuide():
-    print("\nAttack Skill Guide:")
-    print('\nThe Attack skill controls the probability that you will land an attack on an enemy. It also allows you '
-          'to wield better weapons as your level increases.')
+    contents = load_guide("guides/attack_guide.txt")
+    print(contents)
 
 
 def strengthGuide():
-    print("\nStrength Skill Guide:")
-    print('\nThe Strength skill controls both your max possible damage, and also the likelihood '
-          'that you will deal more damage with your successful hits.')
+    contents = load_guide("guides/strength_guide.txt")
+    print(contents)
 
 
 def defenceGuide():
-    print("Defence Skill Guide:")
+    contents = load_guide("guides/defence_guide.txt")
+    print(contents)
 
 
 def magicGuide():
-    print("Magic Skill Guide:")
+    contents = load_guide("guides/magic_guide.txt")
+    print(contents)
 
 
 def archeryGuide():
-    print("Archery Skill Guide:")
+    contents = load_guide("guides/archery_guide.txt")
+    print(contents)
 
 
 def healthGuide():
-    print("Health Skill Guide:")
+    contents = load_guide("guides/health_guide.txt")
+    print(contents)
 
 
 def brewingGuide():
-    print("Brewing Skill Guide:")
+    contents = load_guide("guides/brewing_guide.txt")
+    print(contents)
 
 
 def mainMenu():
