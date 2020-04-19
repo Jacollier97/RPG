@@ -103,7 +103,8 @@ class Gen_Enemy():
                 else:
                     print("Your answer is too big.")
 
-    def get_y_n(self, message):
+    @staticmethod
+    def get_y_n(message):
         options = ["y", "n"]
         while True:
             answer = input(message)
