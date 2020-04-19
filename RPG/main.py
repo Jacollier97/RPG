@@ -25,8 +25,7 @@ def getOppData():
     return get_data(ENEMIES_DATA)
 
 def randVar():
-    odds = random.randrange(0, 101)
-    return int(odds)
+    return random.randint(101)
 
 
 def playerAtk(attack, oppDef):
