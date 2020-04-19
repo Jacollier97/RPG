@@ -7,16 +7,19 @@ ENEMIES_DATA = "enemies.json"
 
 
 def get_data(filename):
-    with open(filename,"r") as f:
+    with open(filename, "r") as f:
         data = json.load(f)
     return data
 
+
 def set_data(filename,data):
     with open(filename, "w") as f:
-        f.write(json.dumps(data,indent=4))
+        f.write(json.dumps(data, indent=4))
+
 
 def getPlayerData():
     return get_data(filename=PLAYER_DATA)
+
 
 def setPlayerData(data):
     set_data(filename=PLAYER_DATA, data=data)
@@ -24,6 +27,7 @@ def setPlayerData(data):
 
 def getOppData():
     return get_data(ENEMIES_DATA)
+
 
 def randVar():
     return random.randint(101)
@@ -103,11 +107,10 @@ def skillGuide():
 def fight(enemy):
     oppData = Enemy[enemy]
     print(oppData)
-    # while (player == alive) or (enemy == alive):
 
 
 def load_guide(filename):
-    with open(filename,"r") as f:
+    with open(filename, "r") as f:
         contents = f.read()
     return contents
 
@@ -185,7 +188,6 @@ def main():
         continueDialogue()
     elif ans == 'menu':
         mainMenu()
-
 
 
 main()
