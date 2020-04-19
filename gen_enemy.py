@@ -1,6 +1,7 @@
 import yaml
 
-class Gen_Enemy():
+
+class GenEnemy:
     """this class is used to more easily generate enemy data, and then save it into the
     enemies.json file"""
 
@@ -121,5 +122,4 @@ class Gen_Enemy():
 
 
 if __name__ == "__main__":
-    ge = Gen_Enemy()
-
+    GenEnemy()
