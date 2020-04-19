@@ -6,6 +6,7 @@ class GenEnemy:
     enemies.json file"""
 
     ENEMIES_DATA = "RPG/enemies.yaml"
+
     def __init__(self):
         self.data = {}
         self.main()
