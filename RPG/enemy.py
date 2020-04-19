@@ -30,3 +30,6 @@ class Enemy:
 
     def speak(self):
         pass
+
+    def __str__(self):
+        return f"{self.name} im working"

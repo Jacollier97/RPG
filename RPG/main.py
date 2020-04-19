@@ -101,8 +101,13 @@ def skillGuide():
 
 
 def fight(enemy):
-    oppData = Enemy[enemy]
-    print(oppData)
+    oppData = getOppData()
+    print(oppData[enemy])
+
+
+    the_dude = Enemy(oppData[enemy])
+    print(enemy)
+
     # while (player == alive) or (enemy == alive):
 
 
