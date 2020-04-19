@@ -1,6 +1,8 @@
 import json
 import random
 
+PLAYER_DATA = "playerData.json"
+ENEMIES_DATA = "enemies.json"
 
 def getPlayerData():
     with open("playerData.json", 'r') as f:
