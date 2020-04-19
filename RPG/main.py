@@ -163,7 +163,7 @@ def mainMenu():
 
 
 def continueDialogue():
-    input(">> Press >enter< to continue.")
+    input("Press >enter< to continue. ")
 
 
 def main():
