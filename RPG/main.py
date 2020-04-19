@@ -18,14 +18,6 @@ def getOppData():
         data = json.load(f)
     return data
 
-
-data = getOppData()
-
-stats = Enemy(**data["guard"])
-print(stats)
-
-
-
 def randVar():
     odds = random.randrange(0, 101)
     return int(odds)
